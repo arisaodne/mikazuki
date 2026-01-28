@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みかづき薬局 | 株式会社クレセント</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --mimosa-yellow: #fdf2b3;
+            --mimosa-soft: #fffdf0;
+            --osmanthus-orange: #f58220;
+            --owl-blue: #1a4472;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-white: #ffffff;
+            --bg-soft: #fafafa;
+            --bg-accent: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-color: var(--bg-white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-tag {
+            color: var(--osmanthus-orange);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            display: block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--owl-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        /* --- Hero --- */
+        #hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: var(--bg-soft);
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 650px;
+            height: 650px;
+            background: var(--mimosa-yellow);
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.4;
+            animation: float 12s infinite alternate ease-in-out;
+        }
+
+        .hero-content h2 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            color: var(--owl-blue);
+            line-height: 1.4;
+        }
+
+        /* --- Facility Support Section (NEW) --- */
+        #facility {
+            background: #fff;
+        }
+
+        .facility-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .facility-card {
+            background: var(--bg-accent);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .facility-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--owl-blue);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid var(--owl-blue);
+            color: var(--owl-blue);
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--owl-blue);
+            color: #fff;
+        }
+
+        .facility-advice {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--mimosa-soft);
+            border-left: 4px solid var(--mimosa-yellow);
+            font-size: 0.95rem;
+        }
+
+        /* --- Watanabe Oyster Section (NEW) --- */
+        #oyster {
+            background-color: var(--bg-soft);
+        }
+
+        .oyster-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .oyster-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .oyster-badge {
+            display: inline-block;
+            background: var(--osmanthus-orange);
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Utility & Buttons --- */
+        .btn-orange {
+            background-color: var(--osmanthus-orange);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(245, 130, 32, 0.2);
+        }
+
+        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(-30px, 50px); } }
+
+        @media (max-width: 768px) {
+            .facility-box { grid-template-columns: 1fr; }
+            .hero-content h2 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container nav">
+            <a href="#" class="logo">
+                <span style="font-size: 1.5rem;">🌙</span>
+                <span>株式会社クレセント</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#philosophy">想い</a></li>
+                <li><a href="#facility">施設在宅</a></li>
+                <li><a href="#oyster">健康習慣</a></li>
+                <li><a href="#line">LINE受付</a></li>
+                <li><a href="#info">アクセス</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-circle"></div>
+        <div class="container hero-content">
+            <h2 data-aos="fade-up" data-aos-duration="1200">
+                夜空を照らす三日のように、<br>
+                あなたの健康を優しく守る。
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="color: var(--text-light); margin-bottom: 40px;">
+                横浜市旭区笹野台。みかづき薬局は、株式会社クレセントが運営する<br>地域密着の「相談できる」薬局です。
+            </p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <a href="#line" class="btn btn-orange">LINEで処方箋を送る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 私たちの想いセクション -->
+    <section id="philosophy">
+        <div class="container">
+            <span class="section-tag" data-aos="fade-up">Our Philosophy</span>
+            <h2 data-aos="fade-up" style="margin-bottom: 40px; color: var(--owl-blue);">🌿 私たちの想い</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;" data-aos="fade-up">
+                「お薬を渡す場所」としてだけでなく、<br>
+                <strong>「ちょっとした健康の不安を、真っ先に相談できる場所」</strong>でありたい。
+            </p>
+            <div style="background: var(--mimosa-soft); padding: 40px; border-radius: 30px;" data-aos="fade-up">
+                <p style="font-weight: 700; color: var(--owl-blue); margin-bottom: 15px;">🏥 処方箋がなくても、お気軽にお立ち寄りください</p>
+                <ul style="list-style: none; font-size: 0.95rem;">
+                    <li>・病院でもらったお薬の飲み合わせが心配</li>
+                    <li>・最近よく眠れない、疲れが取れない…</li>
+                    <li>・市販のサプリメント、どれを選べばいい？</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 施設在宅セクション (NEW) -->
+    <section id="facility">
+        <div class="container">
+            <span class="section-tag" data-aos="fade-up">Regional Care</span>
+            <h2 data-aos="fade-up" style="margin-bottom: 20px;">施設在宅への取り組み</h2>
+            <p data-aos="fade-up" style="color: var(--text-light); margin-bottom: 40px;">
+                私たちは地域の高齢者施設のパートナーとして、入居者様のお薬をサポートしています。<br>
+                提携施設の定期訪問診療に基づき、薬剤師が責任を持って調剤し、施設までお薬をお届けします。
+            </p>
+            
+            <div class="facility-box">
+                <div class="facility-card" data-aos="fade-up">
+                    <h4>住宅型有料老人ホーム<br>アモーレ水の郷</h4>
+                    <a href="https://www.mizunosato.or.jp/pages/42/" target="_blank" class="btn-outline">施設ウェブサイトを見る</a>
+                </div>
+                <div class="facility-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4>特別養護老人ホーム<br>水の郷</h4>
+                    <a href="https://www.mizunosato.or.jp/pages/38/" target="_blank" class="btn-outline">施設ウェブサイトを見る</a>
+                </div>
+            </div>
+
+            <div class="facility-advice" data-aos="fade-up">
+                <p><strong>💡 施設をお探しの方へ</strong><br>
+                「家族に合う施設はどこだろう？」「お薬の管理が不安…」など、施設入居に関するご相談も承っております。地域の医療・介護ネットワークを活かし、最適な選択のお手伝いをさせていただきます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 渡辺オイスターセクション (NEW) -->
+    <section id="oyster">
+        <div class="container">
+            <div class="oyster-content">
+                <div class="oyster-text" data-aos="fade-right">
+                    <span class="oyster-badge">正規取扱店舗</span>
+                    <span class="section-tag">Self Medication</span>
+                    <h2 style="margin-bottom: 25px; color: var(--owl-blue);">薬以外の健康法で、<br>根本から体を変える。</h2>
+                    <p style="margin-bottom: 20px;">
+                        「薬を飲むほどではないけれど、なんとなく不調…」<br>
+                        そんな方へ、私たちは<strong>渡辺オイスター</strong>をご提案しています。
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 30px;">
+                        ミネラルバランスに優れた牡蠣肉エキスが、免疫力をアップさせ、人間が本来持っている「自己治癒力」をサポート。根本的な体質改善を目指す新しい健康習慣、始めてみませんか？
+                    </p>
+                    <a href="https://oyster.co.jp/" target="_blank" class="btn-outline">渡辺オイスター公式サイト ↗</a>
+                </div>
+                <div style="flex: 1; min-width: 300px; text-align: center;" data-aos="fade-left">
+                    <!-- 代替画像プレースホルダー -->
+                    <div style="width: 100%; height: 300px; background: #fff; border-radius: 50% 20% 50% 20%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                        <span style="font-size: 5rem;">🦪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINEセクション -->
+    <section id="line">
+        <div class="container">
+            <div style="background: #fff; padding: 60px; border-radius: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" data-aos="zoom-in">
+                <span class="section-tag">Convenience</span>
+                <h2 style="margin-bottom: 20px;">LINEで処方箋送信</h2>
+                <p style="margin-bottom: 30px; color: var(--text-light);">
+                    スマホで撮って送るだけ。待ち時間を短縮し、<br>お買い物帰りやお仕事帰りにスムーズにお受け取りいただけます。
+                </p>
+                <a href="#" class="btn btn-orange">公式LINEを友だち追加</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセスセクション -->
+    <section id="info">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <div data-aos="fade-right">
+                    <span class="section-tag">Access</span>
+                    <h2 style="margin-bottom: 20px;">みかづき薬局</h2>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px;">
+                        運営：株式会社クレセント<br>
+                        〒241-0816 横浜市旭区笹野台1-20-10<br>
+                        Tel: 045-391-6067
+                    </p>
+                    <div style="background: var(--bg-soft); padding: 20px; border-radius: 15px; font-size: 0.85rem;">
+                        <p>月・火・木・金：09:00 - 17:30</p>
+                        <p>水：09:00 - 17:00 / 土：09:00 - 13:00</p>
+                        <p style="color: #d11;">休：日・祝</p>
+                    </div>
+                </div>
+                <div data-aos="fade-left" style="height: 350px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.3705024765793!2d139.4674034!3d35.4705139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601859664687f8b9%3A0x6b772c8332168344!2z44CSMjQxLTA4MTYg56We5aWI5bed55yM5qiq5rWc5biC5pet5Yy656y56YeO5Y-w77yR5LiB55uu77yS77yQ4oiS77yR77yQ!5e0!3m2!1sja!2sjp!4v1715600000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #eee;">
+        <div class="container">
+            <p style="font-size: 0.8rem; color: #999;">&copy; 2026 Crescent Co., Ltd. / Mikazuki Pharmacy</p>
+            <a href="https://www.instagram.com/mikazuki_pharmacy_sasanodai/" target="_blank" style="text-decoration: none; color: #666; font-size: 0.8rem; margin-top: 10px; display: block;">Instagram @mikazuki_pharmacy_sasanodai</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 1000 });
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
