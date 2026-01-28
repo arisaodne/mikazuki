@@ -136,7 +136,7 @@
             line-height: 1.4;
         }
 
-        /* --- Facility Support Section (NEW) --- */
+        /* --- Facility Support --- */
         #facility {
             background: #fff;
         }
@@ -191,7 +191,7 @@
             font-size: 0.95rem;
         }
 
-        /* --- Watanabe Oyster Section (NEW) --- */
+        /* --- Watabane Oyster --- */
         #oyster {
             background-color: var(--bg-soft);
         }
@@ -228,6 +228,12 @@
             font-weight: 700;
             display: inline-block;
             box-shadow: 0 4px 15px rgba(245, 130, 32, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 130, 32, 0.3);
         }
 
         @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(-30px, 50px); } }
@@ -261,19 +267,19 @@
         <div class="hero-circle"></div>
         <div class="container hero-content">
             <h2 data-aos="fade-up" data-aos-duration="1200">
-                夜空を照らす三日のように、<br>
+                夜空を照らす三日月のように、<br>
                 あなたの健康を優しく守る。
             </h2>
             <p data-aos="fade-up" data-aos-delay="200" style="color: var(--text-light); margin-bottom: 40px;">
                 横浜市旭区笹野台。みかづき薬局は、株式会社クレセントが運営する<br>地域密着の「相談できる」薬局です。
             </p>
             <div data-aos="fade-up" data-aos-delay="400">
-                <a href="#line" class="btn btn-orange">LINEで処方箋を送る</a>
+                <a href="https://lin.ee/uHFMpCI" target="_blank" class="btn btn-orange">LINEで処方箋を送る</a>
             </div>
         </div>
     </section>
 
-    <!-- 私たちの想いセクション -->
+    <!-- 私たちの想い -->
     <section id="philosophy">
         <div class="container">
             <span class="section-tag" data-aos="fade-up">Our Philosophy</span>
@@ -293,7 +299,7 @@
         </div>
     </section>
 
-    <!-- 施設在宅セクション (NEW) -->
+    <!-- 施設在宅セクション -->
     <section id="facility">
         <div class="container">
             <span class="section-tag" data-aos="fade-up">Regional Care</span>
@@ -321,7 +327,7 @@
         </div>
     </section>
 
-    <!-- 渡辺オイスターセクション (NEW) -->
+    <!-- ワタナベオイスターセクション -->
     <section id="oyster">
         <div class="container">
             <div class="oyster-content">
@@ -331,15 +337,14 @@
                     <h2 style="margin-bottom: 25px; color: var(--owl-blue);">薬以外の健康法で、<br>根本から体を変える。</h2>
                     <p style="margin-bottom: 20px;">
                         「薬を飲むほどではないけれど、なんとなく不調…」<br>
-                        そんな方へ、私たちは<strong>渡辺オイスター</strong>をご提案しています。
+                        そんな方へ、私たちは<strong>ワタナベオイスター</strong>をご提案しています。
                     </p>
                     <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 30px;">
-                        ミネラルバランスに優れた牡蠣肉エキスが、免疫力をアップさせ、人間が本来持っている「自己治癒力」をサポート。根本的な体質改善を目指す新しい健康習慣、始めてみませんか？
+                        ミネラルバランスに優れた牡蠣肉エキスが毎日のコンディションを整え、<br>揺るぎない健康の土台づくりをサポート。<br>根本的な体質改善を目指す新しい健康習慣、始めてみませんか？
                     </p>
-                    <a href="https://oyster.co.jp/" target="_blank" class="btn-outline">渡辺オイスター公式サイト ↗</a>
+                    <a href="https://oyster.co.jp/" target="_blank" class="btn-outline">ワタナベオイスター公式サイト ↗</a>
                 </div>
                 <div style="flex: 1; min-width: 300px; text-align: center;" data-aos="fade-left">
-                    <!-- 代替画像プレースホルダー -->
                     <div style="width: 100%; height: 300px; background: #fff; border-radius: 50% 20% 50% 20%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                         <span style="font-size: 5rem;">🦪</span>
                     </div>
@@ -357,18 +362,18 @@
                 <p style="margin-bottom: 30px; color: var(--text-light);">
                     スマホで撮って送るだけ。待ち時間を短縮し、<br>お買い物帰りやお仕事帰りにスムーズにお受け取りいただけます。
                 </p>
-                <a href="https://lin.ee/uHFMpCI" class="btn btn-orange">公式LINEを友だち追加</a>
+                <a href="https://lin.ee/uHFMpCI" target="_blank" class="btn btn-orange">公式LINEを友だち追加</a>
             </div>
         </div>
     </section>
 
     <!-- アクセスセクション -->
-    <section id="info">
+    <section id="info" style="background: #fff;">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
                 <div data-aos="fade-right">
                     <span class="section-tag">Access</span>
-                    <h2 style="margin-bottom: 20px;">みかづき薬局</h2>
+                    <h2 style="margin-bottom: 20px; color: var(--owl-blue);">みかづき薬局 笹野台店</h2>
                     <p style="font-size: 0.9rem; margin-bottom: 20px;">
                         運営：株式会社クレセント<br>
                         〒241-0816 横浜市旭区笹野台1-20-10<br>
