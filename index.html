@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>みかづき薬局 笹野台店 | 株式会社クレセント</title>
-    <!-- Fonts & Libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -31,41 +30,48 @@
         header { position: fixed; width: 100%; top: 0; z-index: 2000; padding: 25px 0; transition: all 0.4s ease; }
         header.scrolled { background: rgba(255, 255, 255, 0.98); padding: 15px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.03); }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 1.2rem; color: var(--owl-blue); text-decoration: none; display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.8rem; font-weight: 700; }
+        .logo { font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 1.3rem; color: var(--owl-blue); text-decoration: none; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.8rem; font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--osmanthus-orange); }
 
         /* --- Hero Slider --- */
-        .hero-slider { height: 85vh; width: 100%; position: relative; overflow: hidden; background: var(--bg-soft); }
+        .hero-slider { height: 85vh; width: 100%; position: relative; overflow: hidden; }
         .swiper-slide { overflow: hidden; }
-        .slide-content-msg { width: 100%; height: 100%; display: flex; align-items: center; position: relative; }
+        
+        /* Message Slide */
+        .slide-content-msg { width: 100%; height: 100%; background-color: var(--bg-soft); display: flex; align-items: center; position: relative; }
         .hero-circle { position: absolute; top: -10%; right: -5%; width: 600px; height: 600px; background: var(--mimosa-yellow); border-radius: 50%; filter: blur(80px); opacity: 0.4; }
-        .slide-banner { width: 100%; height: 100%; background-size: cover; background-position: center; cursor: pointer; transition: transform 0.8s ease; display: flex; align-items: center; }
-        .slide-banner:hover { transform: scale(1.03); }
-        .banner-overlay { margin-left: 60px; background: rgba(255,255,255,0.95); padding: 30px 40px; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); max-width: 480px; border-left: 5px solid var(--osmanthus-orange); }
 
-        /* --- Magazine View --- */
+        /* Banner Slides */
+        .slide-banner { 
+            width: 100%; height: 100%; background-size: cover; background-position: center; cursor: pointer; 
+            transition: transform 0.8s ease; display: flex; align-items: center;
+        }
+        .slide-banner:hover { transform: scale(1.03); }
+        .banner-overlay { 
+            margin-left: 60px; background: rgba(255,255,255,0.95); padding: 30px 40px; border-radius: 12px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); max-width: 480px; border-left: 5px solid var(--osmanthus-orange);
+        }
+
+        /* --- Magazine Content Layout --- */
         .magazine-view { display: none; background: #fff; min-height: 100vh; padding-top: 100px; padding-bottom: 120px; }
         .magazine-header-img { width: 100%; height: 450px; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
         .magazine-inner { max-width: 800px; margin: 50px auto; padding: 0 20px; }
         .magazine-title { font-size: 2.2rem; line-height: 1.3; color: var(--owl-blue); margin-bottom: 35px; }
         .magazine-body h3 { margin: 40px 0 15px; color: var(--owl-blue); border-bottom: 3px solid var(--mimosa-yellow); display: inline-block; }
-        .magazine-body p { margin-bottom: 20px; font-size: 1.05rem; }
-        .magazine-info-box { background: var(--bg-soft); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid #eee; font-size: 0.95rem; }
+        .magazine-body p { margin-bottom: 20px; font-size: 1.05rem; color: #444; }
+        .magazine-info-box { background: var(--bg-soft); padding: 35px; border-radius: 15px; margin-top: 50px; border: 1px solid #eee; }
         .back-btn { display: inline-block; margin-bottom: 25px; color: var(--osmanthus-orange); font-weight: 700; cursor: pointer; text-decoration: none; }
 
-        /* --- Content UI --- */
+        /* --- Common UI --- */
         .btn-orange { background: var(--osmanthus-orange); color: white; padding: 16px 40px; border-radius: 35px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
         .btn-orange:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 130, 32, 0.3); }
-        .btn-outline { display: inline-block; padding: 12px 30px; border: 1px solid var(--owl-blue); color: var(--owl-blue); text-decoration: none; border-radius: 30px; font-size: 0.85rem; transition: 0.3s; }
-        .btn-outline:hover { background: var(--owl-blue); color: #fff; }
-        .facility-card { background: var(--bg-accent); padding: 40px; border-radius: 20px; text-align: center; }
-        .facility-advice { margin-top: 40px; padding: 30px; border-radius: 15px; background: var(--mimosa-soft); border-left: 4px solid var(--mimosa-yellow); font-size: 0.95rem; }
         .swiper-pagination-bullet-active { background: var(--osmanthus-orange) !important; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .banner-overlay { margin-left: 20px; margin-right: 20px; padding: 20px; }
+            .banner-overlay { margin-left: 20px; margin-right: 20px; padding: 25px; }
             .magazine-title { font-size: 1.6rem; }
             .magazine-header-img { height: 300px; }
         }
@@ -83,16 +89,15 @@
                 <li><a href="#facility">施設在宅</a></li>
                 <li><a href="#oyster">健康習慣</a></li>
                 <li><a href="#line">LINE受付</a></li>
-                <li><a href="#info">アクセス</a></li>
             </ul>
         </div>
     </header>
 
     <!-- メインホーム -->
     <main id="home-view">
-        <!-- スライダー -->
         <div class="hero-slider swiper">
             <div class="swiper-wrapper">
+                <!-- Slide 1: Catchcopy -->
                 <div class="swiper-slide">
                     <div class="slide-content-msg">
                         <div class="hero-circle"></div>
@@ -105,7 +110,8 @@
                         </div>
                     </div>
                 </div>
-               <!-- Slide 2: NMN 27000 -->
+
+                <!-- Slide 2: NMN 27000 -->
                 <div class="swiper-slide" onclick="openMagazine('mag-nmn27000')">
                     <div class="slide-banner" style="background-image: url('https://lh3.googleusercontent.com/d/1X0lqKczvhwyW3RMi9CrSu2KyJfZsYKNb');">
                         <div class="banner-overlay">
@@ -232,7 +238,6 @@
         </div>
     </article>
 
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
@@ -263,86 +268,6 @@
             window.scrollTo(0, 0);
         }
 
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-    </script>
-</body>
-</html>
-
-    <!-- マガジンページ：NMN 27000 -->
-    <article id="mag-nmn27000" class="magazine-view">
-        <div class="container">
-            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
-            <img src="https://lh3.googleusercontent.com/d/1X0lqKczvhwyW3RMi9CrSu2KyJfZsYKNb" class="magazine-header-img">
-            <div class="magazine-inner">
-                <h1 class="magazine-title">【新商品】話題のエイジングケア成分「NMN 27000」取り扱い開始！</h1>
-                <div class="magazine-body">
-                    <p>『Dr.Watanabe NMN 27000』は、純度99.9％以上の高品質NMNを業界最高クラスの27,000mg配合。いつまでも自分らしく元気に活動したい方へ。</p>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <!-- マガジンページ：Nomumin (他3つも同様の構造で追加) -->
-    <article id="mag-nomumin" class="magazine-view">
-        <div class="container">
-            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
-            <img src="https://lh3.googleusercontent.com/d/1mk-QJnlAmpq9UTCJGhPVyljhwk5j3VSp" class="magazine-header-img">
-            <div class="magazine-inner">
-                <h1 class="magazine-title">女性の元気を支える、次世代の鉄分サプリ「Nomumin Hormon Aria」</h1>
-                <div class="magazine-body"><p>胃に優しく吸収が良い大豆由来の「フェリチン鉄」を使用。1日1粒で、女性に不足しがちな栄養を補えます。</p></div>
-            </div>
-        </div>
-    </article>
-
-    <article id="mag-curcumin" class="magazine-view">
-        <div class="container">
-            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
-            <img src="https://lh3.googleusercontent.com/d/1NiBXPjkjbKTOhopijHwK4asJJL8mnj_s" class="magazine-header-img">
-            <div class="magazine-inner">
-                <h1 class="magazine-title">吸収力が違う！医学博士監修の次世代ウコンサプリ『CURCUMIN』</h1>
-                <div class="magazine-body"><p>独自のナノ水溶技術により吸収率12倍を実現。お酒を飲む機会が多い方、翌朝スッキリしたい方へ。</p></div>
-            </div>
-        </div>
-    </article>
-
-    <article id="mag-nmn9000" class="magazine-view">
-        <div class="container">
-            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
-            <img src="https://lh3.googleusercontent.com/d/1X-Lryc0laQsa5BVZyS9Do3ebk4Gij7DT" class="magazine-header-img">
-            <div class="magazine-inner">
-                <h1 class="magazine-title">高品質NMNをより身近に。入門に最適な『NMN 9000』</h1>
-                <div class="magazine-body"><p>純度99.9%以上の国内製造クオリティはそのままに、継続しやすいコストパフォーマンスを実現したエントリーモデル。</p></div>
-            </div>
-        </div>
-    </article>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        const swiper = new Swiper('.hero-slider', {
-            loop: true,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            effect: 'fade',
-        });
-        AOS.init({ once: true, duration: 1000 });
-
-        function openMagazine(id) {
-            document.getElementById('home-view').style.display = 'none';
-            document.querySelectorAll('.magazine-view').forEach(m => m.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-        function showHome() {
-            document.getElementById('home-view').style.display = 'block';
-            document.querySelectorAll('.magazine-view').forEach(m => m.style.display = 'none');
-            window.scrollTo(0, 0);
-        }
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) header.classList.add('scrolled');
