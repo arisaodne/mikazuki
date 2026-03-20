@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>みかづき薬局 | 株式会社クレセント</title>
-    <!-- Google Fonts -->
+    <title>みかづき薬局 笹野台店 | 株式会社クレセント</title>
+    <!-- Fonts & Libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
@@ -18,230 +18,56 @@
             --text-light: #666666;
             --bg-white: #ffffff;
             --bg-soft: #fafafa;
-            --bg-accent: #f8f9fa;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            color: var(--text-main);
-            line-height: 1.8;
-            overflow-x: hidden;
-            background-color: var(--bg-white);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Noto Serif JP', serif;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        section {
-            padding: 120px 0;
-        }
-
-        .section-tag {
-            color: var(--osmanthus-orange);
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            display: block;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans JP', sans-serif; color: var(--text-main); line-height: 1.8; overflow-x: hidden; background-color: var(--bg-white); }
+        h1, h2, h3, h4 { font-family: 'Noto Serif JP', serif; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 30px; }
+        section { padding: 100px 0; }
+        .section-tag { color: var(--osmanthus-orange); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.2em; display: block; margin-bottom: 15px; text-transform: uppercase; }
 
         /* --- Header --- */
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 25px 0;
-            transition: all 0.4s ease;
-        }
+        header { position: fixed; width: 100%; top: 0; z-index: 2000; padding: 25px 0; transition: all 0.4s ease; }
+        header.scrolled { background: rgba(255, 255, 255, 0.98); padding: 15px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.03); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 1.2rem; color: var(--owl-blue); text-decoration: none; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.8rem; font-weight: 700; }
 
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
-        }
+        /* --- Hero Slider --- */
+        .hero-slider { height: 85vh; width: 100%; position: relative; overflow: hidden; background: var(--bg-soft); }
+        .swiper-slide { overflow: hidden; }
+        .slide-content-msg { width: 100%; height: 100%; display: flex; align-items: center; position: relative; }
+        .hero-circle { position: absolute; top: -10%; right: -5%; width: 600px; height: 600px; background: var(--mimosa-yellow); border-radius: 50%; filter: blur(80px); opacity: 0.4; }
+        .slide-banner { width: 100%; height: 100%; background-size: cover; background-position: center; cursor: pointer; transition: transform 0.8s ease; display: flex; align-items: center; }
+        .slide-banner:hover { transform: scale(1.03); }
+        .banner-overlay { margin-left: 60px; background: rgba(255,255,255,0.95); padding: 30px 40px; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); max-width: 480px; border-left: 5px solid var(--osmanthus-orange); }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* --- Magazine View --- */
+        .magazine-view { display: none; background: #fff; min-height: 100vh; padding-top: 100px; padding-bottom: 120px; }
+        .magazine-header-img { width: 100%; height: 450px; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .magazine-inner { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+        .magazine-title { font-size: 2.2rem; line-height: 1.3; color: var(--owl-blue); margin-bottom: 35px; }
+        .magazine-body h3 { margin: 40px 0 15px; color: var(--owl-blue); border-bottom: 3px solid var(--mimosa-yellow); display: inline-block; }
+        .magazine-body p { margin-bottom: 20px; font-size: 1.05rem; }
+        .magazine-info-box { background: var(--bg-soft); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid #eee; font-size: 0.95rem; }
+        .back-btn { display: inline-block; margin-bottom: 25px; color: var(--osmanthus-orange); font-weight: 700; cursor: pointer; text-decoration: none; }
 
-        .logo {
-            font-family: 'Noto Serif JP', serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--owl-blue);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-        }
-
-        /* --- Hero --- */
-        #hero {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background-color: var(--bg-soft);
-            overflow: hidden;
-        }
-
-        .hero-circle {
-            position: absolute;
-            top: -10%;
-            right: -5%;
-            width: 650px;
-            height: 650px;
-            background: var(--mimosa-yellow);
-            border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.4;
-            animation: float 12s infinite alternate ease-in-out;
-        }
-
-        .hero-content h2 {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            color: var(--owl-blue);
-            line-height: 1.4;
-        }
-
-        /* --- Facility Support --- */
-        #facility {
-            background: #fff;
-        }
-
-        .facility-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .facility-card {
-            background: var(--bg-accent);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .facility-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .facility-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: var(--owl-blue);
-        }
-
-        .btn-outline {
-            display: inline-block;
-            padding: 10px 25px;
-            border: 1px solid var(--owl-blue);
-            color: var(--owl-blue);
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--owl-blue);
-            color: #fff;
-        }
-
-        .facility-advice {
-            margin-top: 40px;
-            padding: 30px;
-            border-radius: 15px;
-            background: var(--mimosa-soft);
-            border-left: 4px solid var(--mimosa-yellow);
-            font-size: 0.95rem;
-        }
-
-        /* --- Watabane Oyster --- */
-        #oyster {
-            background-color: var(--bg-soft);
-        }
-
-        .oyster-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .oyster-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .oyster-badge {
-            display: inline-block;
-            background: var(--osmanthus-orange);
-            color: #fff;
-            padding: 4px 15px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-
-        /* --- Utility & Buttons --- */
-        .btn-orange {
-            background-color: var(--osmanthus-orange);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(245, 130, 32, 0.2);
-            transition: all 0.3s;
-        }
-
-        .btn-orange:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(245, 130, 32, 0.3);
-        }
-
-        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(-30px, 50px); } }
+        /* --- Content UI --- */
+        .btn-orange { background: var(--osmanthus-orange); color: white; padding: 16px 40px; border-radius: 35px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .btn-orange:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 130, 32, 0.3); }
+        .btn-outline { display: inline-block; padding: 12px 30px; border: 1px solid var(--owl-blue); color: var(--owl-blue); text-decoration: none; border-radius: 30px; font-size: 0.85rem; transition: 0.3s; }
+        .btn-outline:hover { background: var(--owl-blue); color: #fff; }
+        .facility-card { background: var(--bg-accent); padding: 40px; border-radius: 20px; text-align: center; }
+        .facility-advice { margin-top: 40px; padding: 30px; border-radius: 15px; background: var(--mimosa-soft); border-left: 4px solid var(--mimosa-yellow); font-size: 0.95rem; }
+        .swiper-pagination-bullet-active { background: var(--osmanthus-orange) !important; }
 
         @media (max-width: 768px) {
-            .facility-box { grid-template-columns: 1fr; }
-            .hero-content h2 { font-size: 2.2rem; }
             .nav-links { display: none; }
+            .banner-overlay { margin-left: 20px; margin-right: 20px; padding: 20px; }
+            .magazine-title { font-size: 1.6rem; }
+            .magazine-header-img { height: 300px; }
         }
     </style>
 </head>
@@ -249,9 +75,8 @@
 
     <header id="header">
         <div class="container nav">
-            <a href="#" class="logo">
-                <span style="font-size: 1.5rem;">🌙</span>
-                <span>株式会社クレセント</span>
+            <a onclick="showHome()" class="logo">
+                <span>🌙 株式会社クレセント</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#philosophy">想い</a></li>
@@ -263,19 +88,46 @@
         </div>
     </header>
 
-    <section id="hero">
-        <div class="hero-circle"></div>
-        <div class="container hero-content">
-            <h2 data-aos="fade-up" data-aos-duration="1200">
-                夜空を照らす三日月のように、<br>
-                あなたの健康を優しく守る。
-            </h2>
-            <p data-aos="fade-up" data-aos-delay="200" style="color: var(--text-light); margin-bottom: 40px;">
-                横浜市旭区笹野台。みかづき薬局は、株式会社クレセントが運営する<br>地域密着の「相談できる」薬局です。
-            </p>
-            <div data-aos="fade-up" data-aos-delay="400">
-                <a href="https://lin.ee/uHFMpCI" target="_blank" class="btn btn-orange">LINEで処方箋を送る</a>
+    <!-- メインホーム -->
+    <main id="home-view">
+        <!-- スライダー -->
+        <div class="hero-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content-msg">
+                        <div class="hero-circle"></div>
+                        <div class="container">
+                            <h2 style="font-size: 3rem; color: var(--owl-blue); line-height: 1.4; margin-bottom: 20px;">
+                                夜空を照らす三日月のように、<br>あなたの健康を優しく守る。
+                            </h2>
+                            <p style="color: var(--text-light); margin-bottom: 35px;">横浜市旭区笹野台。地域密着の「相談できる」薬局です。</p>
+                            <a href="https://lin.ee/uHFMpCI" target="_blank" class="btn btn-orange">LINEで処方箋を送る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Slides -->
+                <div class="swiper-slide" onclick="openMagazine('mag-nmn27000')">
+                    <div class="slide-banner" style="background-image: url('https://lh3.googleusercontent.com/d/1X0lqKczvhwyW3RMi9CrSu2KyJfZsYKNb');">
+                        <div class="banner-overlay"><h3>NMN 27000 取り扱い開始</h3><p>詳細を見る ↗</p></div>
+                    </div>
+                </div>
+                <div class="swiper-slide" onclick="openMagazine('mag-nomumin')">
+                    <div class="slide-banner" style="background-image: url('https://lh3.googleusercontent.com/d/1mk-QJnlAmpq9UTCJGhPVyljhwk5j3VSp');">
+                        <div class="banner-overlay"><h3>次世代鉄分サプリ Nomumin</h3><p>詳細を見る ↗</p></div>
+                    </div>
+                </div>
+                <div class="swiper-slide" onclick="openMagazine('mag-curcumin')">
+                    <div class="slide-banner" style="background-image: url('https://lh3.googleusercontent.com/d/1NiBXPjkjbKTOhopijHwK4asJJL8mnj_s');">
+                        <div class="banner-overlay"><h3>高吸収ウコン CURCUMIN</h3><p>詳細を見る ↗</p></div>
+                    </div>
+                </div>
+                <div class="swiper-slide" onclick="openMagazine('mag-nmn9000')">
+                    <div class="slide-banner" style="background-image: url('https://lh3.googleusercontent.com/d/1X-Lryc0laQsa5BVZyS9Do3ebk4Gij7DT');">
+                        <div class="banner-overlay"><h3>NMN 9000 エントリーモデル</h3><p>詳細を見る ↗</p></div>
+                    </div>
+                </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -402,6 +254,91 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 1000 });
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
+
+<!-- マガジンページ：NMN 27000 -->
+    <article id="mag-nmn27000" class="magazine-view">
+        <div class="container">
+            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
+            <img src="https://lh3.googleusercontent.com/d/1X0lqKczvhwyW3RMi9CrSu2KyJfZsYKNb" class="magazine-header-img">
+            <div class="magazine-inner">
+                <h1 class="magazine-title">【新商品】話題のエイジングケア成分「NMN 27000」取り扱い開始！</h1>
+                <div class="magazine-body">
+                    <p>『Dr.Watanabe NMN 27000』は、純度99.9％以上の高品質NMNを業界最高クラスの27,000mg配合。いつまでも自分らしく元気に活動したい方へ。</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- マガジンページ：Nomumin (他3つも同様の構造で追加) -->
+    <article id="mag-nomumin" class="magazine-view">
+        <div class="container">
+            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
+            <img src="https://lh3.googleusercontent.com/d/1mk-QJnlAmpq9UTCJGhPVyljhwk5j3VSp" class="magazine-header-img">
+            <div class="magazine-inner">
+                <h1 class="magazine-title">女性の元気を支える、次世代の鉄分サプリ「Nomumin Hormon Aria」</h1>
+                <div class="magazine-body"><p>胃に優しく吸収が良い大豆由来の「フェリチン鉄」を使用。1日1粒で、女性に不足しがちな栄養を補えます。</p></div>
+            </div>
+        </div>
+    </article>
+
+    <article id="mag-curcumin" class="magazine-view">
+        <div class="container">
+            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
+            <img src="https://lh3.googleusercontent.com/d/1NiBXPjkjbKTOhopijHwK4asJJL8mnj_s" class="magazine-header-img">
+            <div class="magazine-inner">
+                <h1 class="magazine-title">吸収力が違う！医学博士監修の次世代ウコンサプリ『CURCUMIN』</h1>
+                <div class="magazine-body"><p>独自のナノ水溶技術により吸収率12倍を実現。お酒を飲む機会が多い方、翌朝スッキリしたい方へ。</p></div>
+            </div>
+        </div>
+    </article>
+
+    <article id="mag-nmn9000" class="magazine-view">
+        <div class="container">
+            <a onclick="showHome()" class="back-btn">← ホームに戻る</a>
+            <img src="https://lh3.googleusercontent.com/d/1X-Lryc0laQsa5BVZyS9Do3ebk4Gij7DT" class="magazine-header-img">
+            <div class="magazine-inner">
+                <h1 class="magazine-title">高品質NMNをより身近に。入門に最適な『NMN 9000』</h1>
+                <div class="magazine-body"><p>純度99.9%以上の国内製造クオリティはそのままに、継続しやすいコストパフォーマンスを実現したエントリーモデル。</p></div>
+            </div>
+        </div>
+    </article>
+
+    <footer style="padding: 60px 0; text-align: center; background: #fafafa; border-top: 1px solid #eee;">
+        <p style="font-size: 0.8rem; color: #999;">&copy; 2026 Crescent Co., Ltd. / Mikazuki Pharmacy Sasanodai</p>
+        <a href="https://www.instagram.com/mikazuki_pharmacy_sasanodai/" target="_blank" style="text-decoration:none; color:#666; font-size:0.8rem; display:block; margin-top:10px;">Instagram @mikazuki_pharmacy_sasanodai</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            effect: 'fade',
+        });
+        AOS.init({ once: true, duration: 1000 });
+
+        function openMagazine(id) {
+            document.getElementById('home-view').style.display = 'none';
+            document.querySelectorAll('.magazine-view').forEach(m => m.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        function showHome() {
+            document.getElementById('home-view').style.display = 'block';
+            document.querySelectorAll('.magazine-view').forEach(m => m.style.display = 'none');
+            window.scrollTo(0, 0);
+        }
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) header.classList.add('scrolled');
